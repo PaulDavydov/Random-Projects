@@ -11,9 +11,9 @@
 <?import javafx.scene.text.Font?>
 
 
-<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+<VBox fx:controller="sample.Controller" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/11" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <TextField alignment="CENTER_RIGHT" centerShape="false" minHeight="-Infinity" minWidth="-Infinity" prefHeight="63.0" prefWidth="191.0" scaleShape="false" text="0.0">
+      <TextField fx:id="textField" alignment="CENTER_RIGHT" centerShape="false" minHeight="-Infinity" minWidth="-Infinity" prefHeight="63.0" prefWidth="191.0" scaleShape="false" text="">
          <font>
             <Font name="Calibri" size="36.0" />
          </font>
@@ -40,7 +40,7 @@
             <Insets left="100.0" right="100.0" top="25.0" />
          </VBox.margin>
          <children>
-            <Button mnemonicParsing="false" prefHeight="77.0" prefWidth="48.0" text="1">
+            <Button onAction="#buttonInitializer" mnemonicParsing="false" prefHeight="77.0" prefWidth="48.0" text="1">
                <font>
                   <Font size="18.0" />
                </font>
@@ -48,7 +48,7 @@
                   <ColorAdjust brightness="-0.11" contrast="0.4" hue="0.31" saturation="0.69" />
                </effect>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="90.0" prefWidth="48.0" text="2" GridPane.columnIndex="1">
+            <Button onAction="#buttonInitializer" mnemonicParsing="false" prefHeight="90.0" prefWidth="48.0" text="2" GridPane.columnIndex="1">
                <font>
                   <Font size="18.0" />
                </font>
@@ -56,7 +56,7 @@
                   <ColorAdjust brightness="-0.11" contrast="0.4" hue="0.31" saturation="0.69" />
                </effect>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="81.0" prefWidth="49.0" text="3" GridPane.columnIndex="2">
+            <Button onAction="#buttonInitializer" mnemonicParsing="false" prefHeight="81.0" prefWidth="49.0" text="3" GridPane.columnIndex="2">
                <font>
                   <Font size="18.0" />
                </font>
@@ -64,7 +64,7 @@
                   <ColorAdjust brightness="-0.11" contrast="0.4" hue="0.31" saturation="0.69" />
                </effect>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="85.0" prefWidth="48.0" text="4" GridPane.rowIndex="1">
+            <Button onAction="#buttonInitializer" mnemonicParsing="false" prefHeight="85.0" prefWidth="48.0" text="4" GridPane.rowIndex="1">
                <font>
                   <Font size="18.0" />
                </font>
@@ -72,7 +72,7 @@
                   <ColorAdjust brightness="-0.11" contrast="0.4" hue="0.31" saturation="0.69" />
                </effect>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="96.0" prefWidth="48.0" text="5" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <Button onAction="#buttonInitializer" mnemonicParsing="false" prefHeight="96.0" prefWidth="48.0" text="5" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <font>
                   <Font size="18.0" />
                </font>
@@ -80,7 +80,7 @@
                   <ColorAdjust brightness="-0.11" contrast="0.4" hue="0.31" saturation="0.69" />
                </effect>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="86.0" prefWidth="49.0" text="6" GridPane.columnIndex="2" GridPane.rowIndex="1">
+            <Button onAction="#buttonInitializer" mnemonicParsing="false" prefHeight="86.0" prefWidth="49.0" text="6" GridPane.columnIndex="2" GridPane.rowIndex="1">
                <font>
                   <Font size="18.0" />
                </font>
@@ -88,7 +88,7 @@
                   <ColorAdjust brightness="-0.11" contrast="0.4" hue="0.31" saturation="0.69" />
                </effect>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="49.0" prefWidth="76.0" text="7" GridPane.rowIndex="2">
+            <Button onAction="#buttonInitializer" mnemonicParsing="false" prefHeight="49.0" prefWidth="76.0" text="7" GridPane.rowIndex="2">
                <font>
                   <Font size="18.0" />
                </font>
@@ -96,7 +96,7 @@
                   <ColorAdjust brightness="-0.11" contrast="0.4" hue="0.31" saturation="0.69" />
                </effect>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="48.0" text="8" GridPane.columnIndex="1" GridPane.rowIndex="2">
+            <Button onAction="#buttonInitializer" mnemonicParsing="false" prefHeight="50.0" prefWidth="48.0" text="8" GridPane.columnIndex="1" GridPane.rowIndex="2">
                <font>
                   <Font size="18.0" />
                </font>
@@ -104,7 +104,7 @@
                   <ColorAdjust brightness="-0.11" contrast="0.4" hue="0.31" saturation="0.69" />
                </effect>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="127.0" prefWidth="49.0" text="9" GridPane.columnIndex="2" GridPane.rowIndex="2">
+            <Button onAction="#buttonInitializer" mnemonicParsing="false" prefHeight="127.0" prefWidth="49.0" text="9" GridPane.columnIndex="2" GridPane.rowIndex="2">
                <font>
                   <Font size="18.0" />
                </font>
@@ -112,7 +112,7 @@
                   <ColorAdjust brightness="-0.11" contrast="0.4" hue="0.31" saturation="0.69" />
                </effect>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="48.0" text="0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+            <Button onAction="#buttonInitializer" mnemonicParsing="false" prefHeight="50.0" prefWidth="48.0" text="0" GridPane.columnIndex="1" GridPane.rowIndex="3">
                <font>
                   <Font size="18.0" />
                </font>
@@ -120,7 +120,7 @@
                   <ColorAdjust brightness="-0.11" contrast="0.4" hue="0.31" saturation="0.69" />
                </effect>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="41.0" prefWidth="138.0" text="+" GridPane.columnIndex="4">
+            <Button onAction="#buttonInitializer" mnemonicParsing="false" prefHeight="41.0" prefWidth="138.0" text="a" GridPane.columnIndex="4">
                <font>
                   <Font size="18.0" />
                </font>
@@ -128,7 +128,7 @@
                   <ColorAdjust brightness="-0.03" contrast="0.02" hue="0.26" saturation="0.33" />
                </effect>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="88.0" text="-" GridPane.columnIndex="4" GridPane.rowIndex="1">
+            <Button onAction="#buttonInitializer" mnemonicParsing="false" prefHeight="40.0" prefWidth="88.0" text="s" GridPane.columnIndex="4" GridPane.rowIndex="1">
                <font>
                   <Font size="18.0" />
                </font>
@@ -136,7 +136,7 @@
                   <ColorAdjust brightness="-0.03" contrast="0.02" hue="0.26" saturation="0.33" />
                </effect>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="98.0" text="*" GridPane.columnIndex="4" GridPane.rowIndex="2">
+            <Button onAction="#buttonInitializer" mnemonicParsing="false" prefHeight="40.0" prefWidth="98.0" text="m" GridPane.columnIndex="4" GridPane.rowIndex="2">
                <font>
                   <Font size="18.0" />
                </font>
@@ -144,7 +144,7 @@
                   <ColorAdjust brightness="-0.03" contrast="0.02" hue="0.26" saturation="0.33" />
                </effect>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="99.0" text="/" GridPane.columnIndex="4" GridPane.rowIndex="3">
+            <Button onAction="#buttonInitializer" mnemonicParsing="false" prefHeight="40.0" prefWidth="99.0" text="d" GridPane.columnIndex="4" GridPane.rowIndex="3">
                <font>
                   <Font size="18.0" />
                </font>
@@ -152,7 +152,7 @@
                   <ColorAdjust brightness="-0.03" contrast="0.02" hue="0.26" saturation="0.33" />
                </effect>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="107.0" prefWidth="47.0" text="=" GridPane.columnIndex="4" GridPane.rowIndex="4">
+            <Button onAction="#buttonInitializer" mnemonicParsing="false" prefHeight="107.0" prefWidth="47.0" text="=" GridPane.columnIndex="4" GridPane.rowIndex="4">
                <font>
                   <Font size="18.0" />
                </font>
