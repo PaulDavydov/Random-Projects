@@ -14,17 +14,11 @@ import java.util.Map;
 
 public class Controller {
 
-    private BigDecimal left = BigDecimal.ZERO;
-    private BigDecimal right = BigDecimal.ZERO;
-    private BigDecimal answer = BigDecimal.ZERO;
-    private String buttonOperator = "";
-
-    public Controller() {
-
-    }
-
-    @FXML private TextField textField;
-    private Map<Button, String> buttonMap = new HashMap<>();
+    private BigDecimal left = BigDecimal.ZERO; // saved when pressing a operator
+    private BigDecimal right = BigDecimal.ZERO;//saved after pressing equal
+    private BigDecimal answer = BigDecimal.ZERO; // final result
+    private String buttonOperator = ""; // will be set to the operator that i press on
+    @FXML private TextField textField; //Where text goes in calculator
 
     @FXML
     public void initialize() {
@@ -33,49 +27,51 @@ public class Controller {
 
     @FXML
     private void buttonInitializer (ActionEvent event) {
-        Button button = (Button)event.getSource();
-        final String buttonText = button.getText();
-        if(buttonText.matches("[0-9]")) {
+        Button button = (Button)event.getSource(); //grabs buttons from the test.fxml file
+        final String buttonText = button.getText(); //grabs text from the buttons
+        if(buttonText.matches("[0-9]")) { //as long as its a number, append the text on textfield
             textField.appendText(buttonText);
         }
-        if (buttonText.matches("[.]")) {
+        if (buttonText.matches("[.]")) {//add a period. Need to think of a way to only allow 1.
             textField.appendText(buttonText);
         }
-        if(buttonText.matches("[a|s|m|d]")) {
-            left = new BigDecimal(textField.getText());
-            buttonOperator = buttonText;
-            textField.clear();
+        if(buttonText.matches("[a|s|m|d]")) { // select operator
+            left = new BigDecimal(textField.getText()); // sets whatever is in textfield, to left
+            buttonOperator = buttonText;// grabs the button text and sets the buttonoperator to it
+            textField.clear();// clear text field
         }
-        if(buttonText.equals("=")) {
-            right = new BigDecimal(textField.getText());
-            answer=calculate(buttonOperator,left,right);
-            textField.setText(answer.toString());
+        if(buttonText.equals("=")) { // this is when the calculation will happen
+            right = new BigDecimal(textField.getText());// sets whatever is in the textfield to right
+            answer=calculate(buttonOperator,left,right);// answer to the arthimetric done
+            textField.setText(answer.toString());// puts up the answer onto the textfield
         }
         if (buttonText.equals("c")) {
-            textField.clear();
+            textField.clear();// just clears the text field
         }
         if(buttonText.equals("ce")) {
-            left = BigDecimal.ZERO;
-            right = BigDecimal.ZERO;
-            textField.clear();
+            clearCalculator(); // sets right and left to 1 and clears textfield
         }
     }
 
-    static BigDecimal calculate(String operator, BigDecimal left, BigDecimal right) {
+    private static BigDecimal calculate(String operator, BigDecimal left, BigDecimal right) {
         switch(operator) {
-            case ("a"):
+            case ("a"): // adding
                 return left.add(right);
-            case("s"):
+            case("s"): // subtracting
                 return left.subtract(right);
-            case("m"):
+            case("m"): // multiplying
                 return left.multiply(right);
-            case("d"):
+            case("d"): // division
                 return left.divide(right);
-            default:
         }
         return right;
     }
 
+    private void clearCalculator() { // clearing the textfield and the two variables
+        left = BigDecimal.ZERO;
+        right = BigDecimal.ZERO;
+        textField.clear();
+    }
 
 
 
