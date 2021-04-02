@@ -38,6 +38,9 @@ public class Controller {
         if(buttonText.matches("[0-9]")) {
             textField.appendText(buttonText);
         }
+        if (buttonText.matches("[.]")) {
+            textField.appendText(buttonText);
+        }
         if(buttonText.matches("[a|s|m|d]")) {
             left = new BigDecimal(textField.getText());
             buttonOperator = buttonText;
@@ -47,6 +50,14 @@ public class Controller {
             right = new BigDecimal(textField.getText());
             answer=calculate(buttonOperator,left,right);
             textField.setText(answer.toString());
+        }
+        if (buttonText.equals("c")) {
+            textField.clear();
+        }
+        if(buttonText.equals("ce")) {
+            left = BigDecimal.ZERO;
+            right = BigDecimal.ZERO;
+            textField.clear();
         }
     }
 
