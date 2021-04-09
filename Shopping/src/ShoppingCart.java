@@ -1,22 +1,31 @@
 import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class ShoppingCart {
-    public ArrayList<Product> products = new ArrayList<>();
+    public List<LineItem> lineItemList = new ArrayList<>();
 
-    public void addProduct (Product product) {
-        this.products.add(product);
+    public void addLineItem (LineItem lineItem) {
+        lineItemList.add(lineItem);
+    }
+
+    public void addLineItem(Product prod, int quantity) {
+        this.addLineItem(new LineItem(prod,quantity));
+    }
+    public List<LineItem> getLineItems() {
+        return lineItemList.stream().map(LineItem::new).collect(Collectors.toList());
     }
 
     public int getTotalCost() {
-        return products.stream()
-                .mapToInt(Product::getPrice)
+        return lineItemList.stream()
+                .mapToInt(LineItem::getPrice)
                 .sum();
     }
 
     @Override
     public String toString() {
         return "ShoppingCart{" +
-                "products=\n" + products +
+                "products=\n" + lineItemList +
                 '}';
     }
 }
