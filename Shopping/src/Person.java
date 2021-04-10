@@ -14,6 +14,14 @@ public class Person {
         return payment.map(value -> new Order(this, cart, value));
     }
 
+    public CreditCard getCreditCard() {
+        return creditCard;
+    }
+
+    public int calculateDiscount() {
+        return 0;
+    }
+
     @Override
     public String toString() {
         return "Person{" +

@@ -33,4 +33,8 @@ public class LineItem {
     public int getPrice() {
         return product.getPrice() * quantity;
     }
+
+    public int calculateShippingCost() {
+        return product.calculateShippingCost() * quantity;
+    }
 }

@@ -1,25 +1,26 @@
-public class Product {
-    private ProductType type;
+public abstract class Product {
     private String productName;
     private int price;
-    private int discount;
-    private int weight;
+    private float discount;
 
-    public Product(String name, int price, ProductType type, int weight) {
+
+    public Product(String name, int price) {
         this.productName = name;
         this.price=price;
-        this.type = type;
-        this.weight = weight;
+    }
+
+    public String getProductName() {
+        return this.productName;
     }
 
     public int getPrice() {
-        int shippingCost = type.getShippingCost(weight);
-        return (int)(price * (100 - discount)/100.0) + shippingCost;
+        int shippingCost = calculateShippingCost();
+        return Math.round((1-discount)*price) + shippingCost;
 
     }
 
-    public void setWeight(int weight) {
-        this.weight = weight;
+    public void setDiscount(float discount) {
+        this.discount = discount;
     }
 
     @Override
@@ -27,8 +28,8 @@ public class Product {
         return "Product{" +
                 "productName='" + productName + '\'' +
                 ", price=" + price +
-                ", type=" + type +
-                ", weight=" + weight +
-                '}';
+                ", discount=" + discount + '}';
     }
+
+    public abstract int calculateShippingCost();
 }
