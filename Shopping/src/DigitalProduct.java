@@ -9,4 +9,9 @@ public class DigitalProduct extends Product{
     public int calculateShippingCost() {
         return 0;
     }
+
+    @Override
+    public void ship() {
+
+    }
 }

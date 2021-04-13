@@ -1,7 +1,7 @@
-public abstract class Product {
+public abstract class Product implements Shippable,Comparable<Product>{
     private String productName;
     private int price;
-    private float discount;
+    private int discount;
 
 
     public Product(String name, int price) {
@@ -19,9 +19,19 @@ public abstract class Product {
 
     }
 
-    public void setDiscount(float discount) {
+    public int compareTo(Product otherProduct) {
+        return productName.compareTo(otherProduct.productName);
+    }
+
+    public int getDiscount() {
+        return discount;
+    }
+
+    public void setDiscount(int discount) {
         this.discount = discount;
     }
+
+    public abstract PriceCalculator createPriceCalculator();
 
     @Override
     public String toString() {

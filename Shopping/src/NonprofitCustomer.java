@@ -1,7 +1,7 @@
 public class NonprofitCustomer extends Person{
 
-    public NonprofitCustomer(String name, long ccNumber) {
-        super(name, ccNumber);
+    public NonprofitCustomer(String name) {
+        super(name);
     }
 
     @Override
